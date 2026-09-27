@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive To-Do List</title>
-  <meta name="description" content="A clean, modern, and interactive To-Do List with LocalStorage persistence.">
+  <meta name="description" content="A clean, modern, and interactive To-Do List with LocalStorage persistence, filtering, and live counter built with pure vanilla HTML, CSS, and JavaScript.">
   
   <!-- Google Fonts for Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +35,31 @@
         </div>
       </div>
     </header>
-  </main>
+
+    <!-- Task Input Form -->
+    <section class="input-section" aria-label="Add a new task">
+      <form id="todoForm" class="todo-form" onsubmit="return false;">
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="taskInput" 
+            class="task-input" 
+            placeholder="What needs to be done? (Press Enter)" 
+            aria-label="New task input"
+            autocomplete="off"
+            maxlength="120"
+          >
+        </div>
+        <button type="submit" id="addBtn" class="btn-add" aria-label="Add task">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Add</span>
+        </button>
+      </form>
+    </section>
+
+      </main>
 </body>
 </html>

@@ -60,6 +60,19 @@
       </form>
     </section>
 
+    <!-- Filters & Live Counter Bar -->
+    <section class="controls-section" aria-label="Task filters and status">
+      <nav class="filter-group" aria-label="Filter tasks">
+        <button type="button" class="filter-btn active" data-filter="all" id="filterAll">All</button>
+        <button type="button" class="filter-btn" data-filter="active" id="filterActive">Active</button>
+        <button type="button" class="filter-btn" data-filter="completed" id="filterCompleted">Completed</button>
+      </nav>
+
+      <div class="task-counter" id="taskCounter" aria-live="polite">
+        0 tasks remaining
+      </div>
+    </section>
+
       </main>
 </body>
 </html>

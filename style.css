@@ -495,3 +495,33 @@ h1 {
   display: none !important;
 }
 
+/* Responsive Styles */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .app-card {
+    padding: 1.35rem;
+    gap: 1.25rem;
+  }
+
+  .controls-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .filter-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .task-counter {
+    text-align: right;
+  }
+}

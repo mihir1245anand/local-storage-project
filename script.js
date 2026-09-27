@@ -39,3 +39,19 @@ function loadTasks() {
     tasks = [];
   }
 }
+
+function addTask(text) {
+  const trimmedText = text.trim();
+  if (!trimmedText) return;
+
+  const newTask = {
+    id: Date.now(),
+    text: trimmedText,
+    completed: false
+  };
+
+  tasks.unshift(newTask);
+  saveTasks();
+  taskInput.value = '';
+  taskInput.focus();
+}

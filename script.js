@@ -23,3 +23,19 @@ function saveTasks() {
     console.error('Failed to save tasks to localStorage:', error);
   }
 }
+
+function loadTasks() {
+  try {
+    const rawData = localStorage.getItem(STORAGE_KEY);
+    if (rawData) {
+      const parsed = JSON.parse(rawData);
+      if (Array.isArray(parsed)) {
+        tasks = parsed;
+        return;
+      }
+    }
+  } catch (error) {
+    console.warn('Corrupted localStorage data found. Initializing with an empty task list:', error);
+    tasks = [];
+  }
+}

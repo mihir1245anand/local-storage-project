@@ -1,11 +1,9 @@
 'use strict';
 
-// 1. Application State & Constants
 const STORAGE_KEY = 'todo_tasks_data';
 let tasks = [];
 let currentFilter = 'all';
 
-// 2. DOM Element References
 const todoForm = document.getElementById('todoForm');
 const taskInput = document.getElementById('taskInput');
 const addBtn = document.getElementById('addBtn');
@@ -16,3 +14,12 @@ const emptyHeading = document.getElementById('emptyHeading');
 const emptyText = document.getElementById('emptyText');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const clearCompletedBtn = document.getElementById('clearCompletedBtn');
+
+function saveTasks() {
+  try {
+    const serializedData = JSON.stringify(tasks);
+    localStorage.setItem(STORAGE_KEY, serializedData);
+  } catch (error) {
+    console.error('Failed to save tasks to localStorage:', error);
+  }
+}

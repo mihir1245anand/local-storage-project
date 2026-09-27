@@ -449,3 +449,49 @@ h1 {
   max-width: 320px;
 }
 
+/* Footer */
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.storage-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.storage-pulse {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-success);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-success);
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color var(--transition-fast);
+}
+
+.clear-btn:hover {
+  color: var(--accent-danger);
+  text-decoration: underline;
+}
+
+/* Utility Hidden */
+.hidden {
+  display: none !important;
+}
+

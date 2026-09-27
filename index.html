@@ -73,6 +73,25 @@
       </div>
     </section>
 
+    <!-- Task List Container -->
+    <section class="list-section" aria-label="Task list">
+      <ul id="taskList" class="task-list" aria-label="List of to-do items">
+        <!-- Tasks dynamically rendered via script.js using document.createElement -->
+      </ul>
+
+      <!-- Friendly Empty State Display -->
+      <div id="emptyState" class="empty-state hidden" aria-live="polite">
+        <div class="empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 12l2.5 2.5L16 9"></path>
+          </svg>
+        </div>
+        <h2 id="emptyHeading" class="empty-title">No tasks found</h2>
+        <p id="emptyText" class="empty-subtitle">You're all caught up! Add a new task above to get started.</p>
+      </div>
+    </section>
+
       </main>
 </body>
 </html>

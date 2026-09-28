@@ -147,12 +147,18 @@ function toggleTask(id) {
  * 
  * @param {number} id - The unique ID of the task to remove
  */
-
 function deleteTask(id) {
+  // Filter out the task with matching id
   tasks = tasks.filter(t => t.id !== id);
+
+  // Persist state and re-render
   saveTasks();
   renderTasks();
 }
+
+/**
+ * Clears all tasks marked as completed.
+ */
 
 function renderTasks() {
   // Clear existing task items in the <ul>

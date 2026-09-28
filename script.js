@@ -55,3 +55,15 @@ function addTask(text) {
   taskInput.value = '';
   taskInput.focus();
 }
+
+todoForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  addTask(taskInput.value);
+});
+
+taskInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    addTask(taskInput.value);
+  }
+});

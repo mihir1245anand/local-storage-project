@@ -159,7 +159,21 @@ function deleteTask(id) {
 /**
  * Clears all tasks marked as completed.
  */
+function clearCompleted() {
+  tasks = tasks.filter(t => !t.completed);
+  saveTasks();
+  renderTasks();
+}
 
+/* ==========================================================================
+   5. UI Rendering & DOM Manipulation
+   ========================================================================== */
+
+/**
+ * Rebuilds and renders the task list DOM from the `tasks` state array.
+ * Uses safe DOM methods (createElement, textContent, classList, appendChild)
+ * to prevent Cross-Site Scripting (XSS) vulnerabilities.
+ */
 function renderTasks() {
   // Clear existing task items in the <ul>
   taskList.innerHTML = '';
@@ -320,42 +334,10 @@ taskList.addEventListener('click', (e) => {
 /**
  * Filter Buttons: Switching between All, Active, and Completed views.
  */
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Update active tab style
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
 
-    // Update state filter and re-render
-    currentFilter = btn.dataset.filter;
-    renderTasks();
-  });
-});
-
-/**
- * Clear Completed Button: Removes all completed tasks in one click.
- */
-clearCompletedBtn.addEventListener('click', () => {
-  clearCompleted();
-});
-
-/* ==========================================================================
-   7. Application Initialization
-   ========================================================================== */
-
-/**
- * Initializes the application when DOM is fully loaded.
- */
 function init() {
-  // 1. Load persisted data from localStorage
   loadTasks();
-
-  // 2. Initial render of tasks to DOM
   renderTasks();
-
-  // 3. Auto-focus the input field for instant typing
   taskInput.focus();
 }
-
-// Start app once DOM is ready
 document.addEventListener('DOMContentLoaded', init);

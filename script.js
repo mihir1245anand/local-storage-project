@@ -334,6 +334,21 @@ taskList.addEventListener('click', (e) => {
 /**
  * Filter Buttons: Switching between All, Active, and Completed views.
  */
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Update active tab style
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Update state filter and re-render
+    currentFilter = btn.dataset.filter;
+    renderTasks();
+  });
+});
+
+/**
+ * Clear Completed Button: Removes all completed tasks in one click.
+ */
 
 function init() {
   loadTasks();

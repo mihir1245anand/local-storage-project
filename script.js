@@ -349,10 +349,27 @@ filterBtns.forEach(btn => {
 /**
  * Clear Completed Button: Removes all completed tasks in one click.
  */
+clearCompletedBtn.addEventListener('click', () => {
+  clearCompleted();
+});
 
+/* ==========================================================================
+   7. Application Initialization
+   ========================================================================== */
+
+/**
+ * Initializes the application when DOM is fully loaded.
+ */
 function init() {
+  // 1. Load persisted data from localStorage
   loadTasks();
+
+  // 2. Initial render of tasks to DOM
   renderTasks();
+
+  // 3. Auto-focus the input field for instant typing
   taskInput.focus();
 }
+
+// Start app once DOM is ready
 document.addEventListener('DOMContentLoaded', init);
